@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:palestre/screens/widget/app_bar.dart';
 
 class Gym extends StatefulWidget {
   const Gym({Key? key}) : super(key: key);
@@ -13,6 +14,8 @@ class Gym extends StatefulWidget {
 class _GymState extends State<Gym> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Scaffold(
+      body: Top_Bar(),
+    );
   }
 }
