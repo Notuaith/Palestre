@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:palestre/screens/widget/custom_appbar.dart';
+import 'package:palestre/screens/widget/drawer_bar.dart';
 
 class Calcetto extends StatefulWidget {
   const Calcetto({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _CalcettoState extends State<Calcetto> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(200), child: CustomBar()),
+          preferredSize: const Size.fromHeight(200), child: DrawerBar()),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
