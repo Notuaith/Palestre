@@ -2,11 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:palestre/screens/pages/calcetto.dart';
-import 'package:palestre/screens/pages/gym.dart';
-import 'package:palestre/screens/pages/homepage.dart';
-import 'package:palestre/screens/pages/padel.dart';
-import 'package:palestre/screens/pages/piscina.dart';
+import 'package:palestre/screens/calcettoScreen/calcetto.dart';
+import 'package:palestre/screens/gymScreen/gym.dart';
+import 'package:palestre/screens/homeScreen/homepage.dart';
+import 'package:palestre/screens/padelScreen/padel.dart';
+import 'package:palestre/screens/piscinaScreen/piscina.dart';
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);

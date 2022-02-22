@@ -2,10 +2,10 @@ import 'dart:ui';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:palestre/screens/main_page_screen.dart';
 import 'package:palestre/screens/welcomePage/welcome_page_screen.dart';
 import 'package:palestre/screens/widget/blackButton.dart';
 import 'package:palestre/screens/widget/blueButton.dart';
+import 'package:palestre/screens/widget/bottom_bar.dart';
 
 class SingInPage extends StatelessWidget {
   const SingInPage({Key? key}) : super(key: key);
@@ -300,7 +300,7 @@ class SingInPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MainPage()),
+                      MaterialPageRoute(builder: (context) => Bottom()),
                     );
                   },
                   child: BlueButton(
