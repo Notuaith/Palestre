@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:palestre/screens/widget/app_bar.dart';
 
 class Padel extends StatefulWidget {
   const Padel({Key? key}) : super(key: key);
@@ -14,8 +13,6 @@ class Padel extends StatefulWidget {
 class _PadelState extends State<Padel> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Top_Bar(),
-    );
+    return const Scaffold(backgroundColor: Colors.black);
   }
 }
