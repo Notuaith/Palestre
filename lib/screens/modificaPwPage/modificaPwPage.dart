@@ -3,6 +3,7 @@ import 'package:palestre/screens/confermaPW/confermaPW.dart';
 import 'package:palestre/screens/homeScreen/homepage.dart';
 import 'package:palestre/screens/widget/blackButton.dart';
 import 'package:palestre/screens/widget/blueButton.dart';
+import 'package:palestre/screens/widget/bottom_bar.dart';
 
 class ModificaPW extends StatelessWidget {
   const ModificaPW({Key? key}) : super(key: key);
@@ -190,7 +191,7 @@ class ModificaPW extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const HomePage(),
+                              builder: (context) => const Bottom(),
                             ),
                           );
                         },

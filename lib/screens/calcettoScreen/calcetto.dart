@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:palestre/screens/widget/drawer_bar.dart';
+import 'package:horizontal_time_picker/horizontal_time_picker.dart';
 
 class Calcetto extends StatefulWidget {
   const Calcetto({Key? key}) : super(key: key);
@@ -30,6 +31,188 @@ class _CalcettoState extends State<Calcetto> {
                     'https://scontent.fbri4-1.fna.fbcdn.net/v/t1.6435-9/123272079_100505655204447_1720549245364891418_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=z6zMaQYNOwcAX98Qsib&_nc_ht=scontent.fbri4-1.fna&oh=00_AT8hT18axqwYZO46JI_TJ9mTnhIF6DzCpJGLFS6ubtBYJQ&oe=6239A60A'),
               ),
             ),
+          ],
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/sfo.png"),
+                      fit: BoxFit.cover)),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 190.0),
+                child: Column(
+// mainAxisAlignment: MainAxisAlignment.center ,
+                  children: [
+                    const SizedBox(height: 250),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                      child: Row(
+                        children: const [
+                          Text(
+                            "Prenota",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                      child: Row(
+                        children: const [
+                          Text(
+                            "Campetto da Caklcio a 7",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15.0, vertical: 15),
+                      child: Divider(
+                        height: 1,
+                        color: Colors.white.withOpacity(1),
+                      ),
+                    ),
+
+//data picker
+                    HorizontalTimePicker(
+                      padding: const EdgeInsets.only(
+                          left: 15, right: 15, top: 7, bottom: 7),
+                      spacingBetweenDates: 0,
+                      initialSelectedDates: [DateTime.now()],
+                      timeIntervalInMinutes: 30,
+// onTimeSelected: (dateTime) => setState(() {
+// }),
+                      key: UniqueKey(),
+                      startTimeInHour: 9,
+                      endTimeInHour: 23,
+                      dateForTime: DateTime.now(),
+                      selectedTimeTextStyle: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        height: 1.0,
+                      ),
+                      timeTextStyle: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        height: 1.0,
+                      ),
+                      defaultDecoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 24, 163, 24),
+                        border: Border.fromBorderSide(BorderSide(
+                          color: Color.fromARGB(255, 24, 163, 24),
+                          width: 1,
+                          style: BorderStyle.none,
+                        )),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(0),
+                        ),
+                      ),
+                      selectedDecoration: const BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 24, 163, 24),
+                              blurRadius: 0,
+                              spreadRadius: 4,
+                              offset: Offset(0, 0))
+                        ],
+                        color: Color.fromARGB(255, 195, 69, 218),
+                        border: Border.fromBorderSide(BorderSide(
+                          color: Color.fromARGB(255, 24, 163, 24),
+                          width: 10,
+                          style: BorderStyle.solid,
+                        )),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(30),
+                        ),
+                      ),
+                      disabledDecoration: const BoxDecoration(
+                        color: Colors.transparent,
+                        border: Border.fromBorderSide(BorderSide(
+                          color: Color.fromARGB(0, 151, 151, 151),
+                          width: 1,
+                          style: BorderStyle.solid,
+                        )),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(5),
+                        ),
+                      ),
+                    ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 45,
+                          height: 8,
+                          decoration: const BoxDecoration(
+                              color: Color.fromARGB(255, 24, 163, 24),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                        ),
+                        const SizedBox(width: 15),
+                        const Text(
+                          "Prenotabile",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400),
+                        ),
+                        const SizedBox(width: 45),
+                        Container(
+                          width: 45,
+                          height: 8,
+                          decoration: const BoxDecoration(
+                            color: Color.fromARGB(255, 195, 69, 218),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        const Text(
+                          "Selezionato",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 24, horizontal: 15),
+                      child: Row(
+                        children: const [
+                          Text(
+                            "Servizi",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),

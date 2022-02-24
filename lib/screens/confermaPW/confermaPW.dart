@@ -36,7 +36,7 @@ class ConfermaPW extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(top: 200.0, bottom: 20),
+              padding: const EdgeInsets.only(top: 200.0, bottom: 20),
               child: Center(
                 child: Container(
                   child: const Icon(

@@ -68,6 +68,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "horizontal_time_picker",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/horizontal_time_picker-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "lints",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
       "packageUri": "lib/",
@@ -158,7 +164,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-02-24T17:02:50.782534Z",
+  "generated": "2022-02-24T20:48:04.486960Z",
   "generator": "pub",
-  "generatorVersion": "2.16.1"
+  "generatorVersion": "2.16.0-134.5.beta"
 }

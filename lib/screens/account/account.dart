@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:palestre/screens/homeScreen/homepage.dart';
 import 'package:palestre/screens/widget/blackButton.dart';
 import 'package:palestre/screens/widget/blueButton.dart';
+import 'package:palestre/screens/widget/bottom_bar.dart';
 
 class Account extends StatelessWidget {
   const Account({Key? key}) : super(key: key);
@@ -29,7 +30,7 @@ class Account extends StatelessWidget {
                   Row(
                     children: const [
                       Padding(
-                        padding: const EdgeInsets.only(left: 20.0),
+                        padding: EdgeInsets.only(left: 20.0),
                         child: Text(
                           "Account",
                           style: TextStyle(
@@ -215,7 +216,7 @@ class Account extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const HomePage(),
+                              builder: (context) => const Bottom(),
                             ),
                           );
                         },
