@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:palestre/screens/widget/drawer_bar.dart';
 
 class HomePage extends StatelessWidget {

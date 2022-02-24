@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:palestre/screens/account/account.dart';
+import 'package:palestre/screens/modificaPwPage/modificaPwPage.dart';
 
 class DrawerBar extends StatefulWidget {
   const DrawerBar({Key? key}) : super(key: key);
@@ -52,26 +54,33 @@ class _DrawerBarState extends State<DrawerBar> {
                 ),
               ),
             ),
-            SizedBox(height: 5),
-            Divider(color: Colors.white),
-            SizedBox(height: 5),
-            buildMenuItem(text: 'Account', icon: Icons.perm_identity_outlined),
-            SizedBox(height: 5),
-            buildMenuItem(text: 'Modifica Password', icon: Icons.lock_outlined),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
+            const Divider(color: Colors.white),
+            const SizedBox(height: 5),
+            buildMenuItem(
+              text: 'Account',
+              icon: Icons.perm_identity_outlined,
+              onClicked: () => selectedItem(context, 0),
+            ),
+            const SizedBox(height: 5),
+            buildMenuItem(
+                text: 'Modifica Password',
+                icon: Icons.lock_outlined,
+                onClicked: () => selectedItem(context, 1)),
+            const SizedBox(height: 5),
             buildMenuItem(
                 text: 'Le Mie Prenotazioni',
                 icon: Icons.bookmark_border_outlined),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             buildMenuItem(
                 text: 'Abbonamenti', icon: Icons.card_membership_outlined),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             buildMenuItem(
                 text: 'Notifiche', icon: Icons.notifications_outlined),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             buildMenuItem(
                 text: 'Dove Siamo', icon: Icons.gps_not_fixed_outlined),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             buildMenuItem1(text: 'Logout', icon: Icons.logout_outlined),
           ],
         ),
@@ -82,6 +91,7 @@ class _DrawerBarState extends State<DrawerBar> {
   Widget buildMenuItem({
     required String text,
     required IconData icon,
+    VoidCallback? onClicked,
   }) {
     final color = Colors.white;
     final hoverColor = Colors.white;
@@ -91,7 +101,7 @@ class _DrawerBarState extends State<DrawerBar> {
       title: Text(text, style: TextStyle(color: color)),
       trailing: Icon(Icons.arrow_forward, color: color),
       hoverColor: hoverColor,
-      onTap: () {},
+      onTap: onClicked,
     );
   }
 }
@@ -109,4 +119,22 @@ Widget buildMenuItem1({
     hoverColor: hoverColor,
     onTap: () {},
   );
+}
+
+void selectedItem(BuildContext context, int index) {
+  switch (index) {
+    case 0:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Account(),
+        ),
+      );
+      break;
+    case 1:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => ModificaPW(),
+        ),
+      );
+  }
 }
