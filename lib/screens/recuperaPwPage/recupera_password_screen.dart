@@ -14,7 +14,7 @@ class RecuperaPw extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       type: MaterialType.transparency,
-      child: new Container(
+      child: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
@@ -23,11 +23,11 @@ class RecuperaPw extends StatelessWidget {
         ),
         child: Column(
           children: [
-            SizedBox(height: 380),
+            const SizedBox(height: 380),
             Row(
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(left: 19.1),
+                  padding: EdgeInsets.only(left: 19.1),
                   child: Text(
                     "Recupera Password",
                     style: TextStyle(
@@ -38,7 +38,7 @@ class RecuperaPw extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -48,8 +48,8 @@ class RecuperaPw extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      new Container(margin: const EdgeInsets.all(5)),
-                      Text(
+                      Container(margin: const EdgeInsets.all(5)),
+                      const Text(
                         "Inserisci l'email usata per la registrazione per ricevere il link di recupero.",
                         style: TextStyle(
                             color: Colors.white,

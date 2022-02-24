@@ -1,8 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:palestre/screens/abbonamenti/abbonamenti.dart';
 import 'package:palestre/screens/account/account.dart';
 import 'package:palestre/screens/modificaPwPage/modificaPwPage.dart';
+import 'package:palestre/screens/notifiche/notifiche.dart';
+import 'package:palestre/screens/posizione/posizione.dart';
+import 'package:palestre/screens/prenotazioni/prenotazioni.dart';
 
 class DrawerBar extends StatefulWidget {
   const DrawerBar({Key? key}) : super(key: key);
@@ -29,7 +33,7 @@ class _DrawerBarState extends State<DrawerBar> {
                       width: 130,
                       height: 130,
                       margin: EdgeInsets.only(top: 30, bottom: 10),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
                             image: NetworkImage(
@@ -37,14 +41,14 @@ class _DrawerBarState extends State<DrawerBar> {
                             fit: BoxFit.fill),
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Notuaith',
                       style: TextStyle(
                         fontSize: 27,
                         color: Colors.white,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'markgabbiadelcazzo@buco.com',
                       style: TextStyle(
                         color: Colors.white,
@@ -64,22 +68,36 @@ class _DrawerBarState extends State<DrawerBar> {
             ),
             const SizedBox(height: 5),
             buildMenuItem(
-                text: 'Modifica Password',
-                icon: Icons.lock_outlined,
-                onClicked: () => selectedItem(context, 1)),
+              text: 'Modifica Password',
+              icon: Icons.lock_outlined,
+              onClicked: () => selectedItem(context, 1),
+            ),
             const SizedBox(height: 5),
             buildMenuItem(
-                text: 'Le Mie Prenotazioni',
-                icon: Icons.bookmark_border_outlined),
+              text: 'Le Mie Prenotazioni',
+              icon: Icons.bookmark_border_outlined,
+              onClicked: () => selectedItem(context, 2),
+            ),
             const SizedBox(height: 5),
             buildMenuItem(
-                text: 'Abbonamenti', icon: Icons.card_membership_outlined),
+              text: 'Abbonamenti',
+              icon: Icons.card_membership_outlined,
+              onClicked: () => selectedItem(context, 3),
+            ),
             const SizedBox(height: 5),
             buildMenuItem(
-                text: 'Notifiche', icon: Icons.notifications_outlined),
+                text: 'Notifiche',
+                icon: Icons.notifications_outlined,
+                onClicked: () => selectedItem(
+                      context,
+                      4,
+                    )),
             const SizedBox(height: 5),
             buildMenuItem(
-                text: 'Dove Siamo', icon: Icons.gps_not_fixed_outlined),
+              text: 'Dove Siamo',
+              icon: Icons.gps_not_fixed_outlined,
+              onClicked: () => selectedItem(context, 5),
+            ),
             const SizedBox(height: 5),
             buildMenuItem1(text: 'Logout', icon: Icons.logout_outlined),
           ],
@@ -136,5 +154,34 @@ void selectedItem(BuildContext context, int index) {
           builder: (context) => ModificaPW(),
         ),
       );
+      break;
+    case 2:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Prenotazioni(),
+        ),
+      );
+      break;
+    case 3:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Abbaonamenti(),
+        ),
+      );
+      break;
+    case 4:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Notifiche(),
+        ),
+      );
+      break;
+    case 5:
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => Posizione(),
+        ),
+      );
+      break;
   }
 }

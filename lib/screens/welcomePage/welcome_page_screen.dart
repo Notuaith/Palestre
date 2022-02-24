@@ -13,8 +13,8 @@ class WelecomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: new SingleChildScrollView(
-        child: new Column(
+      body: SingleChildScrollView(
+        child: Column(
           children: <Widget>[
             Container(
               width: MediaQuery.of(context).size.width,
@@ -25,11 +25,10 @@ class WelecomePage extends StatelessWidget {
                     fit: BoxFit.cover),
               ),
               child: Column(
-                //  mainAxisAlignment: MainAxisAlignment.center ,
                 children: [
-                  SizedBox(height: 380),
+                  const SizedBox(height: 380),
                   Row(
-                    children: [
+                    children: const [
                       Padding(
                         padding: const EdgeInsets.only(left: 13.0),
                         child: Text(
@@ -42,11 +41,11 @@ class WelecomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Row(
-                    children: [
+                    children: const [
                       Padding(
-                        padding: const EdgeInsets.only(left: 13.0),
+                        padding: EdgeInsets.only(left: 13.0),
                         child: Text(
                           "Benvenuto nella nostra Palestra",
                           style: TextStyle(
@@ -57,11 +56,11 @@ class WelecomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
-                    children: [
+                    children: const [
                       Padding(
-                        padding: const EdgeInsets.only(left: 13.0),
+                        padding: EdgeInsets.only(left: 13.0),
                         child: Text(
                           "Email",
                           style: TextStyle(
@@ -95,11 +94,11 @@ class WelecomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   Row(
-                    children: [
+                    children: const [
                       Padding(
-                        padding: const EdgeInsets.only(left: 13.0),
+                        padding: EdgeInsets.only(left: 13.0),
                         child: Text(
                           "Password",
                           style: TextStyle(
@@ -136,7 +135,7 @@ class WelecomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 17),
+                  const SizedBox(height: 17),
                   Padding(
                     padding: const EdgeInsets.only(right: 13.0),
                     child: Row(
@@ -149,7 +148,7 @@ class WelecomePage extends StatelessWidget {
                               builder: (context) => const RecuperaPw(),
                             ),
                           ),
-                          child: Text(
+                          child: const Text(
                             "Password dimenticata?",
                             style: TextStyle(
                               color: Colors.white,
@@ -160,7 +159,7 @@ class WelecomePage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 25),
+                  const SizedBox(height: 25),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -172,7 +171,7 @@ class WelecomePage extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(height: 21),
+                  const SizedBox(height: 21),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -181,7 +180,8 @@ class WelecomePage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SingInPage()),
+                              builder: (context) => const SingInPage(),
+                            ),
                           );
                         },
                         child: BlackButton(

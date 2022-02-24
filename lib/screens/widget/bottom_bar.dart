@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:palestre/screens/calcettoScreen/calcetto.dart';
 import 'package:palestre/screens/gymScreen/gym.dart';
 import 'package:palestre/screens/homeScreen/homepage.dart';
@@ -17,7 +14,13 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int currentIndex = 0;
-  final screens = const [HomePage(), Calcetto(), Gym(), Piscina(), Padel()];
+  final screens = const [
+    HomePage(),
+    Calcetto(),
+    Gym(),
+    Piscina(),
+    Padel(),
+  ];
 
   @override
   Widget build(BuildContext context) {

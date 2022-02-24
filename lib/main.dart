@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:palestre/screens/account/account.dart';
 import 'package:palestre/screens/welcomePage/welcome_page_screen.dart';
+import 'package:palestre/screens/widget/bottom_bar.dart';
 
 // prova
 void main() {
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const WelecomePage(),
+      home: const Bottom(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
