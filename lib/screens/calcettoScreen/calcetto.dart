@@ -81,7 +81,7 @@ class _CalcettoState extends State<Calcetto> {
                       image: AssetImage("assets/images/sfo.png"),
                       fit: BoxFit.cover)),
               child: Padding(
-                padding: const EdgeInsets.only(top: 190.0),
+                padding: const EdgeInsets.only(top: 80.0),
                 child: Column(
                   children: [
                     const SizedBox(height: 250),
@@ -125,7 +125,7 @@ class _CalcettoState extends State<Calcetto> {
                     Container(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
-                            vertical: 24, horizontal: 15),
+                            vertical: 2, horizontal: 15),
                         child: GestureDetector(
                           onTap: () => _selectDate(context),
                           child: Container(
@@ -149,10 +149,10 @@ class _CalcettoState extends State<Calcetto> {
                                     children: [
                                       Text(
                                         "${selectedDate.day}/${selectedDate.month}/${selectedDate.year}",
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Colors.white, fontSize: 13),
                                       ),
-                                      Icon(
+                                      const Icon(
                                         Icons.arrow_drop_down_sharp,
                                         color: Colors.white,
                                       )
@@ -288,11 +288,67 @@ class _CalcettoState extends State<Calcetto> {
                           )
                         ],
                       ),
-                    )
+                    ),
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 80, top: 30),
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.shower,
+                              color: Colors.white,
+                            ),
+                            const Text(
+                              "Doccia",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 50),
+                              child: Row(
+                                children: const [
+                                  Icon(
+                                    Icons.coffee_rounded,
+                                    color: Colors.white,
+                                  ),
+                                  Text(
+                                    "Bar",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 50),
+                              child: Row(
+                                children: const [
+                                  Icon(Icons.arrow_back, color: Colors.white),
+                                  Text(
+                                    "Tornei",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

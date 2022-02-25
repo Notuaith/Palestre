@@ -20,19 +20,19 @@ class _DrawerBarState extends State<DrawerBar> {
   Widget build(BuildContext context) {
     return Drawer(
       child: Material(
-        color: Color.fromARGB(255, 0, 29, 53),
+        color: const Color.fromARGB(255, 0, 29, 53),
         child: ListView(
           children: <Widget>[
             Container(
               width: double.infinity,
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Center(
                 child: Column(
                   children: <Widget>[
                     Container(
                       width: 130,
                       height: 130,
-                      margin: EdgeInsets.only(top: 30, bottom: 10),
+                      margin: const EdgeInsets.only(top: 30, bottom: 10),
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
