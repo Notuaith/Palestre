@@ -10,12 +10,48 @@ class Calcetto extends StatefulWidget {
 }
 
 class _CalcettoState extends State<Calcetto> {
+  String date = "";
+  DateTime selectedDate = DateTime.now();
+
+  _selectDate(BuildContext context) async {
+    final DateTime? selected = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(2020),
+        lastDate: DateTime(2050),
+        builder: (context, child) {
+          return Container(
+            height: 300.0,
+            color: Colors.transparent,
+            child: Container(
+              child: Theme(
+                  data: Theme.of(context).copyWith(
+                    colorScheme: const ColorScheme.dark(
+                      primary: Colors.white,
+                      onPrimary: Color.fromARGB(255, 6, 0, 34),
+                      surface: Color.fromARGB(255, 6, 0, 34),
+                      onSurface: Colors.white,
+                    ),
+                    dialogBackgroundColor: const Color.fromARGB(255, 6, 0, 34),
+                  ),
+                  child: child!),
+            ),
+          );
+        });
+    if (selected != null && selected != selectedDate)
+      setState(
+        () {
+          selectedDate = selected;
+        },
+      );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.black,
-      drawer: DrawerBar(),
+      drawer: const DrawerBar(),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(150),
         child: AppBar(
@@ -47,7 +83,6 @@ class _CalcettoState extends State<Calcetto> {
               child: Padding(
                 padding: const EdgeInsets.only(top: 190.0),
                 child: Column(
-// mainAxisAlignment: MainAxisAlignment.center ,
                   children: [
                     const SizedBox(height: 250),
                     Padding(
@@ -69,7 +104,7 @@ class _CalcettoState extends State<Calcetto> {
                       child: Row(
                         children: const [
                           Text(
-                            "Campetto da Caklcio a 7",
+                            "Campetto da Calcio a 7",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 28,
@@ -86,16 +121,56 @@ class _CalcettoState extends State<Calcetto> {
                         color: Colors.white.withOpacity(1),
                       ),
                     ),
-
-//data picker
+                    const SizedBox(width: 50),
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 24, horizontal: 15),
+                        child: GestureDetector(
+                          onTap: () => _selectDate(context),
+                          child: Container(
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: const [
+                                    Text(
+                                      'Seleziona una data',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 33.0, top: 4),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        "${selectedDate.day}/${selectedDate.month}/${selectedDate.year}",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 13),
+                                      ),
+                                      Icon(
+                                        Icons.arrow_drop_down_sharp,
+                                        color: Colors.white,
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                     HorizontalTimePicker(
                       padding: const EdgeInsets.only(
                           left: 15, right: 15, top: 7, bottom: 7),
                       spacingBetweenDates: 0,
                       initialSelectedDates: [DateTime.now()],
                       timeIntervalInMinutes: 30,
-// onTimeSelected: (dateTime) => setState(() {
-// }),
                       key: UniqueKey(),
                       startTimeInHour: 9,
                       endTimeInHour: 23,
@@ -114,11 +189,13 @@ class _CalcettoState extends State<Calcetto> {
                       ),
                       defaultDecoration: const BoxDecoration(
                         color: Color.fromARGB(255, 24, 163, 24),
-                        border: Border.fromBorderSide(BorderSide(
-                          color: Color.fromARGB(255, 24, 163, 24),
-                          width: 1,
-                          style: BorderStyle.none,
-                        )),
+                        border: Border.fromBorderSide(
+                          BorderSide(
+                            color: Color.fromARGB(255, 24, 163, 24),
+                            width: 1,
+                            style: BorderStyle.none,
+                          ),
+                        ),
                         borderRadius: BorderRadius.all(
                           Radius.circular(0),
                         ),
@@ -132,28 +209,31 @@ class _CalcettoState extends State<Calcetto> {
                               offset: Offset(0, 0))
                         ],
                         color: Color.fromARGB(255, 195, 69, 218),
-                        border: Border.fromBorderSide(BorderSide(
-                          color: Color.fromARGB(255, 24, 163, 24),
-                          width: 10,
-                          style: BorderStyle.solid,
-                        )),
+                        border: Border.fromBorderSide(
+                          BorderSide(
+                            color: Color.fromARGB(255, 24, 163, 24),
+                            width: 10,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
                         borderRadius: BorderRadius.all(
                           Radius.circular(30),
                         ),
                       ),
                       disabledDecoration: const BoxDecoration(
                         color: Colors.transparent,
-                        border: Border.fromBorderSide(BorderSide(
-                          color: Color.fromARGB(0, 151, 151, 151),
-                          width: 1,
-                          style: BorderStyle.solid,
-                        )),
+                        border: Border.fromBorderSide(
+                          BorderSide(
+                            color: Color.fromARGB(0, 151, 151, 151),
+                            width: 1,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
                         borderRadius: BorderRadius.all(
                           Radius.circular(5),
                         ),
                       ),
                     ),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
