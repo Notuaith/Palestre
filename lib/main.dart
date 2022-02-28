@@ -1,6 +1,7 @@
 // @dart=2.16
 import 'package:flutter/material.dart';
 import 'package:palestre/screens/account/account.dart';
+import 'package:palestre/screens/calcettoScreen/calcetto.dart';
 import 'package:palestre/screens/welcomePage/welcome_page_screen.dart';
 import 'package:palestre/screens/widget/bottom_bar.dart';
 
