@@ -58,7 +58,7 @@ class _CalcettoState extends State<Calcetto> {
       backgroundColor: Colors.black,
       drawer: const DrawerBar(),
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(-20),
+        preferredSize: const Size.fromHeight(60),
         child: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
