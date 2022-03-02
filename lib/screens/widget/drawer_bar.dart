@@ -86,12 +86,10 @@ class _DrawerBarState extends State<DrawerBar> {
             ),
             const SizedBox(height: 5),
             buildMenuItem(
-                text: 'Notifiche',
-                icon: Icons.notifications_outlined,
-                onClicked: () => selectedItem(
-                      context,
-                      4,
-                    )),
+              text: 'Notifiche',
+              icon: Icons.notifications_outlined,
+              onClicked: () => selectedItem(context, 4),
+            ),
             const SizedBox(height: 5),
             buildMenuItem(
               text: 'Dove Siamo',
@@ -165,7 +163,7 @@ void selectedItem(BuildContext context, int index) {
     case 3:
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => Abbaonamenti(),
+          builder: (context) => Abbonamenti(),
         ),
       );
       break;

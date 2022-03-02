@@ -75,7 +75,7 @@ class ConfermaPW extends StatelessWidget {
               padding: const EdgeInsets.only(top: 50.0),
               child: BlackButton(testo: 'Torna alla Home'),
             ),
-            const Bottom()
+            const Expanded(child: Bottom())
           ],
         ),
       ),
