@@ -1,7 +1,3 @@
-import 'dart:math';
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:palestre/screens/welcomePage/welcome_page_screen.dart';
 import 'package:palestre/screens/widget/blackButton.dart';
@@ -42,7 +38,7 @@ class RecuperaPw extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -61,11 +57,11 @@ class RecuperaPw extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 45),
+            const SizedBox(height: 45),
             Row(
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(left: 20),
                   child: Text(
                     "Email",
                     style: TextStyle(
@@ -98,19 +94,7 @@ class RecuperaPw extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 50),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: () => null,
-                  child: BlueButton(
-                    testo: 'Invia',
-                  ),
-                )
-              ],
-            ),
-            SizedBox(height: 21),
+            const SizedBox(height: 21),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

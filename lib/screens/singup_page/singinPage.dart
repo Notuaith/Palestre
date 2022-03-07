@@ -297,19 +297,7 @@ class SingInPage extends StatelessWidget {
             const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Bottom()),
-                    );
-                  },
-                  child: BlueButton(
-                    testo: 'Invia',
-                  ),
-                )
-              ],
+              children: const [BlueButton(testo: 'Invia', page: Bottom())],
             ),
             const SizedBox(height: 21),
             Row(

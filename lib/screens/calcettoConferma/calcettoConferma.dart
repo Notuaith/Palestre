@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:palestre/screens/calcettoScreen/calcetto.dart';
+import 'package:palestre/screens/confermaPW/confermaPW.dart';
 import 'package:palestre/screens/widget/blueButton.dart';
 import 'package:palestre/screens/widget/drawer_bar.dart';
 
@@ -236,7 +237,8 @@ class ConfermaCalcetto extends StatelessWidget {
                         ),
                       );
                     },
-                    child: BlueButton(testo: 'Conferma'),
+                    child:
+                        const BlueButton(testo: 'Conferma', page: ConfermaPW()),
                   ),
                 ],
               ),

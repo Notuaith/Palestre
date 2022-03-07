@@ -80,8 +80,6 @@ class _CalcettoState extends State<Calcetto> {
           child: Stack(
             children: [
               Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("assets/images/sfo.png"),
@@ -367,14 +365,14 @@ class _CalcettoState extends State<Calcetto> {
                         )
                       ],
                     ),
-                    Row(
+                    Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: const [
                         Padding(
                           padding:
-                              EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                              EdgeInsets.symmetric(horizontal: 1, vertical: 1),
                           child: Text(
-                            '.................................',
+                            '',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 18,
@@ -384,25 +382,10 @@ class _CalcettoState extends State<Calcetto> {
                         ),
                       ],
                     ),
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      const ConfermaCalcetto(),
-                                ),
-                              );
-                            },
-                            child: BlueButton(testo: 'Conferma'),
-                          ),
-                        ],
-                      ),
-                    ),
+                    const BlueButton(
+                      testo: 'Conferma',
+                      page: ConfermaCalcetto(),
+                    )
                   ],
                 ),
               ),

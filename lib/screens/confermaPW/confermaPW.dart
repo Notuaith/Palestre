@@ -30,54 +30,37 @@ class ConfermaPW extends StatelessWidget {
           ],
         ),
       ),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 200.0, bottom: 20),
-              child: Center(
-                child: Container(
-                  child: const Icon(
-                    Icons.check_circle,
-                    color: Colors.green,
-                    size: 130,
-                  ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 200.0, bottom: 20),
+            child: Center(
+              child: Container(
+                child: const Icon(
+                  Icons.check_circle,
+                  color: Colors.green,
+                  size: 130,
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30),
-              child: Text(
-                "Prenotazione completata con successo",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 28,
-                    letterSpacing: 0.8,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 20),
-              child: Text(
-                'Potrai visualizzare le tue prenotazione nella sezione dedicata al menù principale',
-                style: TextStyle(
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: Text(
+              "Password modificata con successo",
+              textAlign: TextAlign.center,
+              style: TextStyle(
                   color: Colors.white,
-                  letterSpacing: 0.4,
-                  fontSize: 14,
-                ),
-                textAlign: TextAlign.center,
-              ),
+                  fontSize: 28,
+                  letterSpacing: 0.8,
+                  fontWeight: FontWeight.bold),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 50.0),
-              child: BlackButton(testo: 'Torna alla Home'),
-            ),
-            const Expanded(child: Bottom())
-          ],
-        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 50.0),
+            child: BlackButton(testo: 'Torna alla Home'),
+          ),
+        ],
       ),
     );
   }

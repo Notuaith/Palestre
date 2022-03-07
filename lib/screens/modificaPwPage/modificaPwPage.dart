@@ -165,23 +165,6 @@ class ModificaPW extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 200),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ConfermaPW(),
-                            ),
-                          );
-                        },
-                        child: BlueButton(testo: 'Salva'),
-                      )
-                    ],
-                  ),
                   const SizedBox(height: 25),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -207,6 +190,8 @@ class ModificaPW extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton:
+          const BlueButton(testo: 'Conferma', page: ConfermaPW()),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:palestre/screens/homeScreen/homepage.dart';
+import 'package:palestre/screens/modificaPwPage/modificaPwPage.dart';
 import 'package:palestre/screens/widget/blackButton.dart';
 import 'package:palestre/screens/widget/blueButton.dart';
 import 'package:palestre/screens/widget/bottom_bar.dart';
@@ -200,11 +201,8 @@ class Account extends StatelessWidget {
                   const SizedBox(height: 80),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () => null,
-                        child: BlueButton(testo: 'Modifica'),
-                      )
+                    children: const [
+                      BlueButton(testo: 'Modifica', page: ModificaPW())
                     ],
                   ),
                   const SizedBox(height: 25),

@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:palestre/screens/confermaPW/confermaPW.dart';
 import 'package:palestre/screens/recuperaPwPage/recupera_password_screen.dart';
 import 'package:palestre/screens/singup_page/singinPage.dart';
 import 'package:palestre/screens/widget/blackButton.dart';
@@ -162,13 +163,11 @@ class WelecomePage extends StatelessWidget {
                   const SizedBox(height: 25),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () => null,
-                        child: BlueButton(
-                          testo: 'Accedi',
-                        ),
-                      )
+                    children: const [
+                      BlueButton(
+                        testo: 'Accedi',
+                        page: ConfermaPW(),
+                      ) //da cambiare
                     ],
                   ),
                   const SizedBox(height: 21),
