@@ -1,4 +1,4 @@
-#Wed Mar 02 18:23:30 CET 2022
+#Mon Mar 07 10:17:40 CET 2022
 base.0=C\:\\Users\\notua_000\\Documents\\GitHub\\Palestre\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

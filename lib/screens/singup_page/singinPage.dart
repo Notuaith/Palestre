@@ -14,7 +14,7 @@ class SingInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       type: MaterialType.transparency,
-      child: new Container(
+      child: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
@@ -23,11 +23,11 @@ class SingInPage extends StatelessWidget {
         ),
         child: Column(
           children: [
-            SizedBox(height: 75),
+            const SizedBox(height: 75),
             Row(
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(left: 19.1),
+                  padding: EdgeInsets.only(left: 19.1),
                   child: Text(
                     "Registrazione",
                     style: TextStyle(
@@ -41,14 +41,16 @@ class SingInPage extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      new Container(margin: const EdgeInsets.all(5)),
-                      Text(
+                      Container(
+                        margin: const EdgeInsets.all(5),
+                      ),
+                      const Text(
                         "Crea il tuo acccount inserendo i tuoi dati nei campi sottostanti.",
                         style: TextStyle(
                             color: Colors.white,
@@ -60,11 +62,11 @@ class SingInPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(left: 19.1),
+                  padding: EdgeInsets.only(left: 19.1),
                   child: Text(
                     "Nome",
                     style: TextStyle(
@@ -98,11 +100,11 @@ class SingInPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(left: 19.1),
+                  padding: EdgeInsets.only(left: 19.1),
                   child: Text(
                     "Cognome",
                     style: TextStyle(
@@ -136,11 +138,11 @@ class SingInPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(left: 19.1),
+                  padding: EdgeInsets.only(left: 19.1),
                   child: Text(
                     "ID Tessera (Opzionale)",
                     style: TextStyle(
@@ -174,11 +176,11 @@ class SingInPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(left: 19.1),
+                  padding: EdgeInsets.only(left: 19.1),
                   child: Text(
                     "Email",
                     style: TextStyle(
@@ -212,11 +214,11 @@ class SingInPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(left: 19.1),
+                  padding: EdgeInsets.only(left: 19.1),
                   child: Text(
                     "Password",
                     style: TextStyle(
@@ -252,11 +254,11 @@ class SingInPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(left: 19.1),
+                  padding: EdgeInsets.only(left: 19.1),
                   child: Text(
                     "Conferma Password",
                     style: TextStyle(
@@ -292,7 +294,7 @@ class SingInPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -309,7 +311,7 @@ class SingInPage extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: 21),
+            const SizedBox(height: 21),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -317,7 +319,9 @@ class SingInPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => WelecomePage()),
+                      MaterialPageRoute(
+                        builder: (context) => const WelecomePage(),
+                      ),
                     );
                   },
                   child: BlackButton(
