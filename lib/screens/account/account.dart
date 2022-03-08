@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:palestre/screens/homeScreen/homepage.dart';
-import 'package:palestre/screens/modificaPwPage/modificaPwPage.dart';
-import 'package:palestre/screens/widget/blackButton.dart';
-import 'package:palestre/screens/widget/blueButton.dart';
+import 'package:palestre/confermaOperazione/conferma_operazione.dart';
 import 'package:palestre/screens/widget/bottom_bar.dart';
+import 'package:palestre/screens/widget/button.dart';
 
 class Account extends StatelessWidget {
   const Account({Key? key}) : super(key: key);
@@ -198,32 +196,20 @@ class Account extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 80),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      BlueButton(testo: 'Modifica', page: ModificaPW())
-                    ],
+                  const Padding(
+                    padding: EdgeInsets.only(top: 100),
+                    child: Button(
+                        testo: 'Modifica',
+                        page: Operazione(),
+                        color: Colors.blue),
                   ),
-                  const SizedBox(height: 25),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Bottom(),
-                            ),
-                          );
-                        },
-                        child: BlackButton(
-                          testo: 'Indietro',
-                        ),
-                      )
-                    ],
-                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 20),
+                    child: Button(
+                        testo: 'Indietro',
+                        page: Bottom(),
+                        color: Colors.transparent),
+                  )
                 ],
               ),
             ),

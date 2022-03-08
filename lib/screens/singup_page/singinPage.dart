@@ -2,9 +2,9 @@ import 'dart:ui';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:palestre/screens/homeScreen/homepage.dart';
 import 'package:palestre/screens/welcomePage/welcome_page_screen.dart';
-import 'package:palestre/screens/widget/blackButton.dart';
-import 'package:palestre/screens/widget/blueButton.dart';
+import 'package:palestre/screens/widget/button.dart';
 import 'package:palestre/screens/widget/bottom_bar.dart';
 
 class SingInPage extends StatelessWidget {
@@ -293,30 +293,6 @@ class SingInPage extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [BlueButton(testo: 'Invia', page: Bottom())],
-            ),
-            const SizedBox(height: 21),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const WelecomePage(),
-                      ),
-                    );
-                  },
-                  child: BlackButton(
-                    testo: 'Indietro',
-                  ),
-                ),
-              ],
             ),
           ],
         ),

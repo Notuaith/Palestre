@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:palestre/screens/widget/blackButton.dart';
-import 'package:palestre/screens/widget/bottom_bar.dart';
+import 'package:palestre/screens/homeScreen/homepage.dart';
+import 'package:palestre/screens/widget/button.dart';
 import 'package:palestre/screens/widget/drawer_bar.dart';
 
 class ConfermaPW extends StatelessWidget {
@@ -55,10 +55,6 @@ class ConfermaPW extends StatelessWidget {
                   letterSpacing: 0.8,
                   fontWeight: FontWeight.bold),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 50.0),
-            child: BlackButton(testo: 'Torna alla Home'),
           ),
         ],
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:palestre/screens/homeScreen/homepage.dart';
 import 'package:palestre/screens/welcomePage/welcome_page_screen.dart';
-import 'package:palestre/screens/widget/blackButton.dart';
-import 'package:palestre/screens/widget/blueButton.dart';
+import 'package:palestre/screens/widget/button.dart';
 
 class RecuperaPw extends StatelessWidget {
   const RecuperaPw({Key? key}) : super(key: key);
@@ -93,23 +93,6 @@ class RecuperaPw extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 21),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => WelecomePage()),
-                    );
-                  },
-                  child: BlackButton(
-                    testo: 'Indietro',
-                  ),
-                )
-              ],
             ),
           ],
         ),

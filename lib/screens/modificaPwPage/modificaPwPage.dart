@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:palestre/screens/confermaPW/confermaPW.dart';
 import 'package:palestre/screens/homeScreen/homepage.dart';
-import 'package:palestre/screens/widget/blackButton.dart';
-import 'package:palestre/screens/widget/blueButton.dart';
-import 'package:palestre/screens/widget/bottom_bar.dart';
+import 'package:palestre/screens/widget/button.dart';
 
 class ModificaPW extends StatelessWidget {
   const ModificaPW({Key? key}) : super(key: key);
@@ -31,7 +29,7 @@ class ModificaPW extends StatelessWidget {
                   Row(
                     children: const [
                       Padding(
-                        padding: const EdgeInsets.only(left: 20.0),
+                        padding: EdgeInsets.only(left: 20.0),
                         child: Text(
                           "Modifica Password",
                           style: TextStyle(
@@ -165,33 +163,26 @@ class ModificaPW extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 25),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Bottom(),
-                            ),
-                          );
-                        },
-                        child: BlackButton(
-                          testo: 'Indietro',
-                        ),
-                      )
-                    ],
+                  const Padding(
+                    padding: EdgeInsets.only(top: 250),
+                    child: Button(
+                        testo: 'Conferma',
+                        page: ConfermaPW(),
+                        color: Colors.blue),
                   ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 20),
+                    child: Button(
+                        testo: 'Indietro',
+                        page: HomePage(),
+                        color: Colors.transparent),
+                  )
                 ],
               ),
             ),
           ],
         ),
       ),
-      floatingActionButton:
-          const BlueButton(testo: 'Conferma', page: ConfermaPW()),
     );
   }
 }

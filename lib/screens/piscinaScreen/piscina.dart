@@ -14,9 +14,9 @@ class _PiscinaState extends State<Piscina> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.black,
-      drawer: DrawerBar(),
+      drawer: const DrawerBar(),
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(150),
+        preferredSize: const Size.fromHeight(150),
         child: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,

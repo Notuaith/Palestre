@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:palestre/screens/confermaPW/confermaPW.dart';
 import 'package:palestre/screens/recuperaPwPage/recupera_password_screen.dart';
 import 'package:palestre/screens/singup_page/singinPage.dart';
-import 'package:palestre/screens/widget/blackButton.dart';
-import 'package:palestre/screens/widget/blueButton.dart';
+import 'package:palestre/screens/widget/button.dart';
 
 class WelecomePage extends StatelessWidget {
   const WelecomePage({Key? key}) : super(key: key);
@@ -159,35 +158,6 @@ class WelecomePage extends StatelessWidget {
                         )
                       ],
                     ),
-                  ),
-                  const SizedBox(height: 25),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      BlueButton(
-                        testo: 'Accedi',
-                        page: ConfermaPW(),
-                      ) //da cambiare
-                    ],
-                  ),
-                  const SizedBox(height: 21),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const SingInPage(),
-                            ),
-                          );
-                        },
-                        child: BlackButton(
-                          testo: 'Iscriviti',
-                        ),
-                      ),
-                    ],
                   ),
                 ],
               ),

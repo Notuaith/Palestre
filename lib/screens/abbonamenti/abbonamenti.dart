@@ -1,7 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:palestre/screens/widget/blackButton.dart';
+import 'package:palestre/screens/homeScreen/homepage.dart';
+import 'package:palestre/screens/widget/Button.dart';
 import 'package:palestre/screens/widget/bottom_bar.dart';
 
 class Abbonamenti extends StatelessWidget {
@@ -13,7 +12,7 @@ class Abbonamenti extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color.fromARGB(255, 23, 0, 61),
+      backgroundColor: const Color.fromARGB(255, 23, 0, 61),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         textDirection: TextDirection.ltr,
@@ -74,7 +73,7 @@ class Abbonamenti extends StatelessWidget {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.only(top: 200, left: 35),
+            padding: EdgeInsets.only(top: 150, left: 35),
             child: SizedBox(
               width: 350,
               child: Text(
@@ -88,25 +87,13 @@ class Abbonamenti extends StatelessWidget {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.only(top: 40),
-            child: SizedBox(height: 21),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Bottom()),
-                  );
-                },
-                child: BlackButton(
-                  testo: 'Indietro',
-                ),
-              ),
-            ],
-          ),
+            padding: EdgeInsets.only(left: 85, top: 90),
+            child: Button(
+              testo: 'Torna alla Home',
+              page: Bottom(),
+              color: Colors.blue,
+            ),
+          )
         ],
       ),
     );

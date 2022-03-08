@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.black,
-      drawer: DrawerBar(),
+      drawer: const DrawerBar(),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(150),
         child: AppBar(
