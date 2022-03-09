@@ -4,6 +4,8 @@ import 'package:palestre/screens/abbonamenti/abbonamenti.dart';
 import 'package:palestre/screens/account/account.dart';
 import 'package:palestre/screens/calcettoConferma/calcettoConferma.dart';
 import 'package:palestre/screens/calcettoScreen/calcetto.dart';
+import 'package:palestre/screens/padelScreen/padel.dart';
+import 'package:palestre/screens/recuperaPwPage/recupera_password_screen.dart';
 import 'package:palestre/screens/welcomePage/welcome_page_screen.dart';
 import 'package:palestre/screens/widget/bottom_bar.dart';
 
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
           ),
-      home: const ConfermaCalcetto(),
+      home: const Bottom(),
       debugShowCheckedModeBanner: false,
     );
   }

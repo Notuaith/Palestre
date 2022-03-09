@@ -1,9 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:palestre/screens/confermaPW/confermaPW.dart';
 import 'package:palestre/screens/recuperaPwPage/recupera_password_screen.dart';
 import 'package:palestre/screens/singup_page/singinPage.dart';
+import 'package:palestre/screens/widget/bottom_bar.dart';
 import 'package:palestre/screens/widget/button.dart';
 
 class WelecomePage extends StatelessWidget {
@@ -158,6 +158,23 @@ class WelecomePage extends StatelessWidget {
                         )
                       ],
                     ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(
+                      top: 30,
+                    ),
+                    child: Button(
+                      testo: 'Accedi',
+                      page: Bottom(),
+                      color: Colors.blue,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 20),
+                    child: Button(
+                        testo: 'Iscriviti',
+                        page: SingInPage(),
+                        color: Colors.transparent),
                   ),
                 ],
               ),

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:palestre/screens/calcettoConferma/calcettoConferma.dart';
-import 'package:palestre/screens/widget/button.dart';
 import 'package:palestre/screens/widget/drawer_bar.dart';
 import 'package:horizontal_time_picker/horizontal_time_picker.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -82,8 +80,9 @@ class _CalcettoState extends State<Calcetto> {
               Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/images/sfo.png"),
-                      fit: BoxFit.fill),
+                      image: AssetImage("assets/images/calcio.jpg"),
+                      alignment: FractionalOffset.topCenter,
+                      fit: BoxFit.contain),
                 ),
                 child: Column(
                   children: [

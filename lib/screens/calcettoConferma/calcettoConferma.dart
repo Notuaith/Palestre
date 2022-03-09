@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:palestre/confermaOperazione/conferma_operazione.dart';
+import 'package:palestre/screens/confermaOperazione/conferma_operazione.dart';
 import 'package:palestre/screens/widget/Button.dart';
 
 class ConfermaCalcetto extends StatelessWidget {
@@ -14,7 +14,7 @@ class ConfermaCalcetto extends StatelessWidget {
         child: Container(
           child: Column(
             children: [
-              const SizedBox(height: 160),
+              const SizedBox(height: 100),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Row(
@@ -91,7 +91,7 @@ class ConfermaCalcetto extends StatelessWidget {
                     child: Text(
                       "Titolare Prenotazione",
                       style: TextStyle(
-                          color: Color.fromARGB(255, 158, 158, 158),
+                          color: Colors.white,
                           fontSize: 17,
                           fontWeight: FontWeight.bold),
                     ),
@@ -123,7 +123,7 @@ class ConfermaCalcetto extends StatelessWidget {
                     child: Text(
                       "Numero di cellulare",
                       style: TextStyle(
-                          color: Color.fromARGB(255, 158, 158, 158),
+                          color: Colors.white,
                           fontSize: 17,
                           fontWeight: FontWeight.bold),
                     ),
@@ -204,10 +204,13 @@ class ConfermaCalcetto extends StatelessWidget {
                   ),
                 ),
               ),
-              const Button(
-                testo: 'Conferma',
-                page: Operazione(),
-                color: Colors.blue,
+              const Padding(
+                padding: EdgeInsets.only(top: 60),
+                child: Button(
+                  testo: 'Conferma',
+                  page: Operazione(),
+                  color: Colors.blue,
+                ),
               )
             ],
           ),

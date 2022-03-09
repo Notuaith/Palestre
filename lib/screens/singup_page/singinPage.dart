@@ -1,11 +1,7 @@
-import 'dart:ui';
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:palestre/screens/homeScreen/homepage.dart';
+import 'package:palestre/screens/confermaOperazione/conferma_operazione.dart';
 import 'package:palestre/screens/welcomePage/welcome_page_screen.dart';
 import 'package:palestre/screens/widget/button.dart';
-import 'package:palestre/screens/widget/bottom_bar.dart';
 
 class SingInPage extends StatelessWidget {
   const SingInPage({Key? key}) : super(key: key);
@@ -293,6 +289,21 @@ class SingInPage extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 30),
+              child: Button(
+                testo: 'Invia',
+                page: Operazione(),
+                color: Colors.blue,
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Button(
+                  testo: 'Indietro',
+                  page: WelecomePage(),
+                  color: Colors.transparent),
             ),
           ],
         ),

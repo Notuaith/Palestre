@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:palestre/confermaOperazione/conferma_operazione.dart';
+import 'package:palestre/screens/confermaOperazione/conferma_operazione.dart';
 import 'package:palestre/screens/widget/bottom_bar.dart';
 import 'package:palestre/screens/widget/button.dart';
 

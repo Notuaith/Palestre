@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:palestre/screens/homeScreen/homepage.dart';
-import 'package:palestre/screens/welcomePage/welcome_page_screen.dart';
+import 'package:palestre/screens/confermaOperazione/conferma_operazione.dart';
+import 'package:palestre/screens/modificaPwPage/modificaPwPage.dart';
 import 'package:palestre/screens/widget/button.dart';
 
 class RecuperaPw extends StatelessWidget {
@@ -93,6 +93,21 @@ class RecuperaPw extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 50),
+              child: Button(
+                testo: 'Invia',
+                page: Operazione(),
+                color: Colors.blue,
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Button(
+                  testo: 'Indietro',
+                  page: ModificaPW(),
+                  color: Colors.transparent),
             ),
           ],
         ),

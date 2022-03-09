@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:palestre/screens/confermaPW/confermaPW.dart';
-import 'package:palestre/screens/homeScreen/homepage.dart';
+import 'package:palestre/screens/confermaOperazione/conferma_operazione.dart';
+
+import 'package:palestre/screens/widget/bottom_bar.dart';
 import 'package:palestre/screens/widget/button.dart';
 
 class ModificaPW extends StatelessWidget {
@@ -167,14 +168,14 @@ class ModificaPW extends StatelessWidget {
                     padding: EdgeInsets.only(top: 250),
                     child: Button(
                         testo: 'Conferma',
-                        page: ConfermaPW(),
+                        page: Operazione(),
                         color: Colors.blue),
                   ),
                   const Padding(
                     padding: EdgeInsets.only(top: 20),
                     child: Button(
                         testo: 'Indietro',
-                        page: HomePage(),
+                        page: Bottom(),
                         color: Colors.transparent),
                   )
                 ],
