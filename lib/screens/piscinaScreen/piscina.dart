@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:palestre/screens/piscinaConferma/piscinaConferma.dart';
+import 'package:palestre/screens/widget/button.dart';
 import 'package:palestre/screens/widget/drawer_bar.dart';
+import 'package:horizontal_time_picker/horizontal_time_picker.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Piscina extends StatefulWidget {
   const Piscina({Key? key}) : super(key: key);
@@ -9,14 +13,53 @@ class Piscina extends StatefulWidget {
 }
 
 class _PiscinaState extends State<Piscina> {
+  String date = "";
+  DateTime selectedDate = DateTime.now();
+  String dropdownValue = 'Vasca 1';
+
+  _selectDate(BuildContext context) async {
+    final DateTime? selected = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(2020),
+        lastDate: DateTime(2050),
+        builder: (context, child) {
+          return Container(
+            height: 300.0,
+            color: Colors.transparent,
+            child: Container(
+              child: Theme(
+                  data: Theme.of(context).copyWith(
+                    colorScheme: const ColorScheme.dark(
+                      primary: Colors.white,
+                      onPrimary: Color.fromARGB(255, 6, 0, 34),
+                      surface: Color.fromARGB(255, 6, 0, 34),
+                      onSurface: Colors.white,
+                    ),
+                    dialogBackgroundColor: const Color.fromARGB(255, 6, 0, 34),
+                  ),
+                  child: child!),
+            ),
+          );
+        });
+    if (selected != null && selected != selectedDate) {
+      setState(
+        () {
+          selectedDate = selected;
+        },
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.black,
       drawer: const DrawerBar(),
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(150),
+        preferredSize: const Size.fromHeight(60),
         child: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
@@ -31,6 +74,393 @@ class _PiscinaState extends State<Piscina> {
               ),
             ),
           ],
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Expanded(
+          child: Stack(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/nuoto.jpeg"),
+                      alignment: FractionalOffset.topCenter,
+                      fit: BoxFit.contain),
+                ),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 250),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                      child: Row(
+                        children: const [
+                          Text(
+                            "Prenota",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                      child: Row(
+                        children: const [
+                          Text(
+                            "Turno in Palestra",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15.0, vertical: 15),
+                      child: Divider(
+                        height: 1,
+                        color: Colors.white.withOpacity(1),
+                      ),
+                    ),
+                    const SizedBox(width: 50),
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 2, horizontal: 15),
+                        child: Container(
+                          child: Column(
+                            children: [
+                              Row(
+                                children: const [
+                                  Text(
+                                    'Seleziona una data',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  Spacer(),
+                                  Text(
+                                    'Seleziona Corso',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 33.0, top: 4),
+                                child: Row(
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () => _selectDate(context),
+                                      child: Text(
+                                        "${selectedDate.day}/${selectedDate.month}/${selectedDate.year}",
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 13,
+                                        ),
+                                      ),
+                                    ),
+                                    const Icon(
+                                      Icons.arrow_drop_down_sharp,
+                                      color: Colors.white,
+                                    ),
+                                    const Spacer(),
+                                    Padding(
+                                      padding: const EdgeInsets.only(right: 25),
+                                      child: Theme(
+                                        data: Theme.of(context).copyWith(
+                                            canvasColor: Colors.black),
+                                        child: DropdownButton<String>(
+                                          value: dropdownValue,
+                                          icon: const Icon(
+                                            Icons.arrow_drop_down_sharp,
+                                            color: Colors.white,
+                                          ),
+                                          elevation: 0,
+                                          style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 13),
+                                          onChanged: (String? newValue) {
+                                            setState(() {
+                                              dropdownValue = newValue!;
+                                            });
+                                          },
+                                          items: <String>[
+                                            'Vasca 1',
+                                            'Vasca 2 ',
+                                            'Vasca 3',
+                                            'Vasca 4'
+                                          ].map<DropdownMenuItem<String>>(
+                                              (String value) {
+                                            return DropdownMenuItem<String>(
+                                              value: value,
+                                              child: Text(value),
+                                            );
+                                          }).toList(),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    HorizontalTimePicker(
+                      padding: const EdgeInsets.only(
+                          left: 15, right: 15, top: 7, bottom: 7),
+                      spacingBetweenDates: 0,
+                      initialSelectedDates: [DateTime.now()],
+                      timeIntervalInMinutes: 30,
+                      key: UniqueKey(),
+                      startTimeInHour: 9,
+                      endTimeInHour: 23,
+                      dateForTime: DateTime.now(),
+                      selectedTimeTextStyle: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        height: 1.0,
+                      ),
+                      timeTextStyle: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        height: 1.0,
+                      ),
+                      defaultDecoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 24, 163, 24),
+                        border: Border.fromBorderSide(
+                          BorderSide(
+                            color: Color.fromARGB(255, 24, 163, 24),
+                            width: 1,
+                            style: BorderStyle.none,
+                          ),
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(0),
+                        ),
+                      ),
+                      selectedDecoration: const BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 24, 163, 24),
+                              blurRadius: 0,
+                              spreadRadius: 4,
+                              offset: Offset(0, 0))
+                        ],
+                        color: Color.fromARGB(255, 195, 69, 218),
+                        border: Border.fromBorderSide(
+                          BorderSide(
+                            color: Color.fromARGB(255, 24, 163, 24),
+                            width: 10,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(30),
+                        ),
+                      ),
+                      disabledDecoration: const BoxDecoration(
+                        color: Colors.transparent,
+                        border: Border.fromBorderSide(
+                          BorderSide(
+                            color: Color.fromARGB(0, 151, 151, 151),
+                            width: 1,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(5),
+                        ),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 45,
+                          height: 8,
+                          decoration: const BoxDecoration(
+                              color: Color.fromARGB(255, 24, 163, 24),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                        ),
+                        const SizedBox(width: 15),
+                        const Text(
+                          "Prenotabile",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400),
+                        ),
+                        const SizedBox(width: 45),
+                        Container(
+                          width: 45,
+                          height: 8,
+                          decoration: const BoxDecoration(
+                            color: Color.fromARGB(255, 195, 69, 218),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        const Text(
+                          "Selezionato",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 24, horizontal: 15),
+                      child: Row(
+                        children: const [
+                          Text(
+                            "Servizi",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.only(right: 5),
+                          child: Icon(
+                            Icons.shower,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 80,
+                          child: Text(
+                            'Doccia',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(right: 5),
+                          child: Icon(
+                            Icons.coffee,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 60,
+                          child: Text(
+                            'Bar',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 5.0),
+                          child: SvgPicture.asset(
+                            'assets/images/trophy.svg',
+                            color: Colors.white,
+                          ),
+                        ),
+                        const Text(
+                          'Gare',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Padding(
+                            padding: EdgeInsets.only(right: 5),
+                            child: Icon(
+                              Icons.fitness_center_outlined,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Personal Trainer',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400),
+                          )
+                        ],
+                      ),
+                    ),
+                    Row(
+                      children: const [
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 50),
+                          child: Text(
+                            'Descrizione',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: const [
+                        Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 1, vertical: 1),
+                          child: Text(
+                            '',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Button(
+                        testo: 'Conferma',
+                        page: ConfermaPiscina(),
+                        color: Colors.blue),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

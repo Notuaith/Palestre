@@ -15,6 +15,7 @@ class Gym extends StatefulWidget {
 class _CalcettoState extends State<Gym> {
   String date = "";
   DateTime selectedDate = DateTime.now();
+  String dropdownValue = 'Sala Attrezzi';
 
   _selectDate(BuildContext context) async {
     final DateTime? selected = await showDatePicker(
@@ -130,41 +131,87 @@ class _CalcettoState extends State<Gym> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                             vertical: 2, horizontal: 15),
-                        child: GestureDetector(
-                          onTap: () => _selectDate(context),
-                          child: Container(
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: const [
-                                    Text(
-                                      'Seleziona una data',
-                                      style: TextStyle(
+                        child: Container(
+                          child: Column(
+                            children: [
+                              Row(
+                                children: const [
+                                  Text(
+                                    'Seleziona una data',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  Spacer(),
+                                  Text(
+                                    'Seleziona Corso',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 33.0, top: 4),
+                                child: Row(
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () => _selectDate(context),
+                                      child: Text(
+                                        "${selectedDate.day}/${selectedDate.month}/${selectedDate.year}",
+                                        style: const TextStyle(
                                           color: Colors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w600),
+                                          fontSize: 13,
+                                        ),
+                                      ),
+                                    ),
+                                    const Icon(
+                                      Icons.arrow_drop_down_sharp,
+                                      color: Colors.white,
+                                    ),
+                                    const Spacer(),
+                                    Padding(
+                                      padding: const EdgeInsets.only(right: 10),
+                                      child: Theme(
+                                        data: Theme.of(context).copyWith(
+                                            canvasColor: Colors.black),
+                                        child: DropdownButton<String>(
+                                          value: dropdownValue,
+                                          icon: const Icon(
+                                            Icons.arrow_drop_down_sharp,
+                                            color: Colors.white,
+                                          ),
+                                          elevation: 0,
+                                          style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 13),
+                                          onChanged: (String? newValue) {
+                                            setState(() {
+                                              dropdownValue = newValue!;
+                                            });
+                                          },
+                                          items: <String>[
+                                            'Sala Attrezzi',
+                                            'Sala Fitness',
+                                            'Sala Zumba',
+                                            'Sala Relax'
+                                          ].map<DropdownMenuItem<String>>(
+                                              (String value) {
+                                            return DropdownMenuItem<String>(
+                                              value: value,
+                                              child: Text(value),
+                                            );
+                                          }).toList(),
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 33.0, top: 4),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        "${selectedDate.day}/${selectedDate.month}/${selectedDate.year}",
-                                        style: const TextStyle(
-                                            color: Colors.white, fontSize: 13),
-                                      ),
-                                      const Icon(
-                                        Icons.arrow_drop_down_sharp,
-                                        color: Colors.white,
-                                      )
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -406,7 +453,7 @@ class _CalcettoState extends State<Gym> {
                       ],
                     ),
                     const Button(
-                        testo: 'Avanti',
+                        testo: 'Conferma',
                         page: ConfermaGym(),
                         color: Colors.blue),
                   ],

@@ -34,7 +34,7 @@ class ConfermaGym extends StatelessWidget {
                 child: Row(
                   children: const [
                     Text(
-                      "Padel",
+                      "Palestra",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 28,
