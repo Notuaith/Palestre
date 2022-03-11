@@ -209,7 +209,7 @@ class ConfermaCalcetto extends StatelessWidget {
                 child: Button(
                   testo: 'Conferma',
                   page: Operazione(),
-                  color: Colors.blue,
+                  color: Colors.green,
                 ),
               )
             ],
